@@ -11,10 +11,12 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Square trunk;
+    private Person person;
+    private Triangle tree1;
+    private Triangle tree2;
+    private Triangle tree3;
+    private Triangle hat;
 
     /**
      * Constructor for objects of class Picture
@@ -29,51 +31,59 @@ public class Picture
      */
     public void draw()
     {
-        wall = new Square();
-        wall.moveHorizontal(-140);
-        wall.moveVertical(20);
-        wall.changeSize(120);
-        wall.makeVisible();
+        trunk = new Square();
+        trunk.moveHorizontal(-110);
+        trunk.moveVertical(80);
+        trunk.changeSize(20);
+        trunk.makeVisible();
+        trunk.changeColor("black");
         
-        window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(-120);
-        window.moveVertical(40);
-        window.changeSize(40);
-        window.makeVisible();
+        person = new Person();
+        person.changeColor("black");
+        person.moveHorizontal(0);
+        person.moveVertical(0);
+        person.makeVisible();
 
-        roof = new Triangle();  
-        roof.changeSize(60, 180);
-        roof.moveHorizontal(20);
-        roof.moveVertical(-60);
-        roof.makeVisible();
-
-        sun = new Circle();
-        sun.changeColor("yellow");
-        sun.moveHorizontal(100);
-        sun.moveVertical(-40);
-        sun.changeSize(80);
-        sun.makeVisible();
+        tree1 = new Triangle();
+        tree1.changeColor("green");
+        tree1.makeVisible();
+        
+        tree2 = new Triangle();
+        tree2.changeColor("green");
+        tree2.moveVertical(-30);
+        tree2.makeVisible();
+        
+        tree3 = new Triangle();
+        tree3.changeColor("green");
+        tree3.moveVertical(-60);
+        tree3.makeVisible();
+        
+        hat = new Triangle();
+        hat.changeColor("red");
+        hat.changeSize(19, 10);
+        hat.moveHorizontal(70);
+        hat.moveVertical(15);
+        hat.makeVisible();
     }
 
     /**
      * Change this picture to black/white display
      */
-    public void setBlackAndWhite()
+    /**public void setBlackAndWhite()
     {
-        if (wall != null)   // only if it's painted already...
+        if (trunk != null)   // only if it's painted already...
         {
             wall.changeColor("black");
             window.changeColor("white");
             roof.changeColor("black");
             sun.changeColor("black");
         }
-    }
+    }*/
 
     /**
      * Change this picture to use color display
      */
-    public void setColor()
+    /**public void setColor()
     {
         if (wall != null)   // only if it's painted already...
         {
@@ -82,5 +92,5 @@ public class Picture
             roof.changeColor("green");
             sun.changeColor("yellow");
         }
-    }
+    }*/
 }
